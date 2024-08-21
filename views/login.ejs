@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    
+  }
+  body{
+    background-color: #111;
+    color: white;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .container{
+    background-color:#88828211;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  .in{
+    padding: 10px;
+    display: block;
+    font-size: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    border: none;
+
+  }
+  .sub{
+    position: relative;
+    left: 50px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: cornflowerblue;
+    
+    &:hover{
+      cursor: pointer;
+      background: rgb(78, 132, 232);
+
+    }
+  }
+  
+</style>
+<body>
+  <div class="container">
+    <h2>
+      Login Account
+    </h2>
+    <form action="/login" method="post">
+  
+      <!-- <input class="in" type="text" placeholder="username" name="username" id="username"> -->
+      <!-- <input class="in" type="text" placeholder="name" name="name" id=""> -->
+      <input class="in" type="email" placeholder="email" name="email" id="">
+      <input class="in" type="password" placeholder="password" name="password" id="">
+      <input class="in sub" type="submit" value="Login account" id="">
+
+    </form>
+    <a href="/logout">logout</a>
+  </div>
+</body>
+</html>

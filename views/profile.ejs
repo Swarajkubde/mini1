@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    textarea,
+    input {
+      display: block;
+      resize: none;
+      margin: 10px;
+    }
+    textarea {
+      width: 600px;
+      height: 250px;
+    }
+    input {
+      padding: 10px 15px;
+      background-color: cornflowerblue;
+    }
+    .hh {
+      display: flex;
+    }
+    .postcont {
+      margin: 10px;
+
+      width: 300px;
+      border: 2px solid;
+      padding: 10px;
+    }
+  </style>
+  <body>
+    hello <%=user.name%>
+    <div>you can create your post here</div>
+    <div class="container">
+      <form method="post" action="/post">
+        <textarea
+          placeholder="tell me something new"
+          name="content"
+          id=""
+        ></textarea>
+        <input type="submit" value="create post" id="" />
+      </form>
+    </div>
+    <div><h3>your posts</h3></div>
+    <div class="hh">
+      <%user.posts.forEach(function(post){%>
+      <div class="postcont">
+        <h2>@<%=user.username%></h2>
+        <p><%=post.content%></p>
+        <div class="like">
+          <!-- <a href="/like/<%=post._id%>">like</a>
+          <a href="">edit</a> -->
+        </div>
+      </div>
+      <%})%>
+    </div>
+
+    <a href="/logout">logout</a>
+  </body>
+</html>
